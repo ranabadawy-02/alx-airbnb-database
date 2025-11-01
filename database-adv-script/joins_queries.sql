@@ -11,7 +11,7 @@ FROM Booking AS b
 INNER JOIN User AS u
     ON b.user_id = u.user_id;
 
--- 2. LEFT JOIN: Properties and Reviews
+-- 2. LEFT JOIN: Properties and Reviews (including properties without reviews)
 SELECT
     p.property_id,
     p.name AS property_name,
@@ -21,7 +21,8 @@ SELECT
     r.comment
 FROM Property AS p
 LEFT JOIN Review AS r
-    ON p.property_id = r.property_id;
+    ON p.property_id = r.property_id
+ORDER BY p.property_id;
 
 -- 3. FULL OUTER JOIN: Users and Bookings
 SELECT
