@@ -15,7 +15,7 @@ Contains SQL queries that demonstrate:
 - **Non-correlated subquery**: Find all properties with an average rating greater than 4.0.
 - **Correlated subquery**: Find users who have made more than 3 bookings.
 
-### aggregations_and_window_functions.sql
+# aggregations_and_window_functions.sql
 Contains SQL queries that demonstrate:
 - **Aggregation (COUNT + GROUP BY)** → Find total number of bookings made by each user.
 - **Window function (RANK)** → Rank properties based on the total number of bookings they have received.
