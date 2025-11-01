@@ -14,3 +14,8 @@ CREATE INDEX idx_booking_property ON Booking(property_id);
 
 -- Optimize joins between Payment and Booking
 CREATE INDEX idx_payment_booking ON Payment(booking_id);
+
+
+-- Measure performance before and after using EXPLAIN ANALYZE
+EXPLAIN ANALYZE SELECT * FROM Booking WHERE status = 'confirmed';
+EXPLAIN ANALYZE SELECT * FROM User WHERE email = 'test@example.com';
