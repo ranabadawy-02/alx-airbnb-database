@@ -18,3 +18,11 @@ CREATE INDEX idx_property_price ON Property(pricepernight);
 CREATE INDEX idx_booking_property ON Booking(property_id);
 CREATE INDEX idx_payment_booking ON Payment(booking_id);
 
+EXPLAIN SELECT * FROM Booking WHERE status = 'confirmed';
+-- Result: Full Table Scan (slow)
+
+EXPLAIN SELECT * FROM Booking WHERE status = 'confirmed';
+-- Result: Index Scan using idx_booking_status (faster)
+
+EXPLAIN SELECT * FROM User WHERE email = 'test@example.com';
+-- Uses idx_user_email to quickly locate the user.
